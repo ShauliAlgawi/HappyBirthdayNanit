@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A8ECEDA2B82081000D72AAE /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ECED92B82081000D72AAE /* ImagePickerView.swift */; };
+		5A8ECEDC2B823D9B00D72AAE /* AddUpdateChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ECEDB2B823D9B00D72AAE /* AddUpdateChildView.swift */; };
+		5A8ECEE02B835D9100D72AAE /* SharedBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8ECEDF2B835D9100D72AAE /* SharedBirthdayView.swift */; };
 		5A9B0C442B7E1202005C4464 /* HappyBirthdayNanitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9B0C432B7E1202005C4464 /* HappyBirthdayNanitApp.swift */; };
 		5A9B0C462B7E1202005C4464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9B0C452B7E1202005C4464 /* ContentView.swift */; };
 		5A9B0C482B7E1205005C4464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B0C472B7E1205005C4464 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A8ECED92B82081000D72AAE /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		5A8ECEDB2B823D9B00D72AAE /* AddUpdateChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateChildView.swift; sourceTree = "<group>"; };
+		5A8ECEDF2B835D9100D72AAE /* SharedBirthdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBirthdayView.swift; sourceTree = "<group>"; };
 		5A9B0C402B7E1202005C4464 /* HappyBirthdayNanit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBirthdayNanit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9B0C432B7E1202005C4464 /* HappyBirthdayNanitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBirthdayNanitApp.swift; sourceTree = "<group>"; };
 		5A9B0C452B7E1202005C4464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +61,8 @@
 		5A9B0CDD2B7E445D005C4464 /* MainListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListScreen.swift; sourceTree = "<group>"; };
 		5A9B0CDF2B7E4AC4005C4464 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		5A9B0CE12B7E5FC2005C4464 /* BirthdayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayScreen.swift; sourceTree = "<group>"; };
+		5A9B0CE32B81E1BF005C4464 /* BentonSans Cond Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans Cond Regular.otf"; sourceTree = "<group>"; };
+		5A9B0CE52B81E245005C4464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,8 @@
 		5A9B0C422B7E1202005C4464 /* HappyBirthdayNanit */ = {
 			isa = PBXGroup;
 			children = (
+				5A9B0CE52B81E245005C4464 /* Info.plist */,
+				5A9B0CE42B81E1CB005C4464 /* Fonts */,
 				5A9B0C712B7E13EC005C4464 /* Views */,
 				5A9B0C6E2B7E12C3005C4464 /* Models */,
 				5A9B0C432B7E1202005C4464 /* HappyBirthdayNanitApp.swift */,
@@ -112,6 +122,7 @@
 				5A9B0C472B7E1205005C4464 /* Assets.xcassets */,
 				5A9B0C492B7E1205005C4464 /* HappyBirthdayNanit.entitlements */,
 				5A9B0C4A2B7E1205005C4464 /* Preview Content */,
+				5A8ECED92B82081000D72AAE /* ImagePickerView.swift */,
 			);
 			path = HappyBirthdayNanit;
 			sourceTree = "<group>";
@@ -152,12 +163,22 @@
 		5A9B0C712B7E13EC005C4464 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A8ECEDF2B835D9100D72AAE /* SharedBirthdayView.swift */,
 				5A9B0C722B7E1410005C4464 /* MainScreenItemCell.swift */,
 				5A9B0CE12B7E5FC2005C4464 /* BirthdayScreen.swift */,
 				5A9B0CDD2B7E445D005C4464 /* MainListScreen.swift */,
 				5A9B0CDF2B7E4AC4005C4464 /* CircleImage.swift */,
+				5A8ECEDB2B823D9B00D72AAE /* AddUpdateChildView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5A9B0CE42B81E1CB005C4464 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5A9B0CE32B81E1BF005C4464 /* BentonSans Cond Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8ECEE02B835D9100D72AAE /* SharedBirthdayView.swift in Sources */,
 				5A9B0C702B7E12DE005C4464 /* MainScreenItem.swift in Sources */,
 				5A9B0C462B7E1202005C4464 /* ContentView.swift in Sources */,
+				5A8ECEDC2B823D9B00D72AAE /* AddUpdateChildView.swift in Sources */,
 				5A9B0C442B7E1202005C4464 /* HappyBirthdayNanitApp.swift in Sources */,
 				5A9B0C732B7E1410005C4464 /* MainScreenItemCell.swift in Sources */,
+				5A8ECEDA2B82081000D72AAE /* ImagePickerView.swift in Sources */,
 				5A9B0CDE2B7E445D005C4464 /* MainListScreen.swift in Sources */,
 				5A9B0CE22B7E5FC2005C4464 /* BirthdayScreen.swift in Sources */,
 				5A9B0CE02B7E4AC4005C4464 /* CircleImage.swift in Sources */,
@@ -456,8 +480,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HappyBirthdayNanit/Preview Content\"";
+				DEVELOPMENT_TEAM = VZ9JD9VFPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HappyBirthdayNanit/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Happy Birthday would like to have access to your camera so you'll be able to attach the photo of your kids to the birthday screen";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -492,8 +519,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HappyBirthdayNanit/Preview Content\"";
+				DEVELOPMENT_TEAM = VZ9JD9VFPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HappyBirthdayNanit/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Happy Birthday would like to have access to your camera so you'll be able to attach the photo of your kids to the birthday screen";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
