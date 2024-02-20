@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DBBADF6C-A430-4ED3-8B39-8DC799DB8B6B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63E66FED-BDE1-4BA0-AACF-6660BB93BB88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyBirthdayNanit/Views/AddUpdateChildView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getProfileImageFrom(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D17BECB6-A9A6-4952-BCA9-D2B1A85F1144"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyBirthdayNanit/Views/BirthdayScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "getProfileImageFrom(_:designKit:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D17BECB6-A9A6-4952-BCA9-D2B1A85F1144 - 63a161c79653ed46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappyBirthdayNanit.BirthdayScreen.getProfileImageFrom(_: HappyBirthdayNanit.ChildItem, designKit: HappyBirthdayNanit.DesignKit) -&gt; __C.UIImage"
+                  moduleName = "HappyBirthdayNanit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shaulialgawi/Documents/GitHub/HappyBirthdayNanit/HappyBirthdayNanit/HappyBirthdayNanit/Views/BirthdayScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "D17BECB6-A9A6-4952-BCA9-D2B1A85F1144 - 63a161c79653ed27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HappyBirthdayNanit.BirthdayScreen.getProfileImageFrom(_: HappyBirthdayNanit.ChildItem, designKit: HappyBirthdayNanit.DesignKit) -&gt; __C.UIImage"
+                  moduleName = "HappyBirthdayNanit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shaulialgawi/Documents/GitHub/HappyBirthdayNanit/HappyBirthdayNanit/HappyBirthdayNanit/Views/BirthdayScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "986150A4-9D5F-4F4C-A0F5-A85D74E351DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HappyBirthdayNanit/Views/AddUpdateChildView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "986150A4-9D5F-4F4C-A0F5-A85D74E351DA - 901f49e1ee4b866c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.focused(SwiftUI.FocusState&lt;Swift.Bool&gt;.Binding) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.focused(SwiftUI.FocusState&lt;Swift.Bool&gt;.Binding) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in HappyBirthdayNanit.AddUpdateChildView.body.getter : some"
+                  moduleName = "HappyBirthdayNanit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shaulialgawi/Documents/GitHub/HappyBirthdayNanit/HappyBirthdayNanit/HappyBirthdayNanit/Views/AddUpdateChildView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "986150A4-9D5F-4F4C-A0F5-A85D74E351DA - 901f49e1ee4b866c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.focused(SwiftUI.FocusState&lt;Swift.Bool&gt;.Binding) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.focused(SwiftUI.FocusState&lt;Swift.Bool&gt;.Binding) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in HappyBirthdayNanit.AddUpdateChildView.body.getter : some"
+                  moduleName = "HappyBirthdayNanit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shaulialgawi/Documents/GitHub/HappyBirthdayNanit/HappyBirthdayNanit/HappyBirthdayNanit/Views/AddUpdateChildView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "740">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
