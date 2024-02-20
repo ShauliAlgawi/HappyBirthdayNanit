@@ -7,31 +7,64 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 
-struct MainScreenItem {
-    var id: String = UUID().uuidString
+@Model class ChildItem {
     var name: String
-    var birthday: String
     var imageUrl: String?
+    var imageData: Data?
+    var birthDate: Date
+    @Attribute(.unique) var uuid: UUID
     
-    init(name: String, birthday: String, imageUrl: String?) {
+    init(name: String, birthDate: Date, imageUrl: String? = nil, imageData: Data? = nil) {
         self.name = name
-        self.birthday = birthday
         self.imageUrl = imageUrl
+        self.birthDate = birthDate
+        self.uuid = UUID()
     }
     
     var image: Image {
-        return Image(imageUrl ?? "Default_place_holder_blue-1")
+        if let data = imageData,
+           let profileImage = UIImage(data: data) {
+            return Image(uiImage: profileImage)
+        }
+        return Image("Default_place_holder_blue-1")
+    }
+    
+    var age: String {
+        let dateDiffs = getDateDiffs()
+        if let year = dateDiffs.year,
+           year > 0 {
+            return "\(year)"
+        }
+        if let month = dateDiffs.month,
+           month > 0 {
+            return "\(month)"
+        }
+        
+        return "0"
+    }
+    
+    var isAgeInYears: Bool {
+        let diffs = getDateDiffs()
+        if let year = diffs.year, year > 0 {
+            return true
+        }
+        
+        return false
+    }
+    
+    var birthday: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: birthDate)
+    }
+    
+    private func getDateDiffs() -> DateComponents {
+        let diffs = Calendar.current.dateComponents([.year, .month], from: birthDate, to: Date())
+        return diffs
+
     }
 }
 
-extension MainScreenItem {
-    static let mockList: [MainScreenItem] = [
-        MainScreenItem(name: "Itay Algawi", birthday: "02/07/2018", imageUrl: nil),
-        MainScreenItem(name: "Shay Algawi", birthday: "29/06/2020", imageUrl: nil),
-        MainScreenItem(name: "Sivan Algawi", birthday: "02/06/1984", imageUrl: nil),
-        MainScreenItem(name: "Shauli Algawi", birthday: "30/05/1984", imageUrl: nil),
-        MainScreenItem(name: "", birthday: "29/06/2020", imageUrl: nil)
-    ]
-}

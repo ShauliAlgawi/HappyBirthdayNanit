@@ -6,21 +6,32 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainListScreen: View {
-    let kids = MainScreenItem.mockList
+    @Environment(\.modelContext) private var context
+    @Query(sort: \ChildItem.uuid, order: .reverse) private var kids: [ChildItem]
     var body: some View {
-        NavigationView {
-        
-        ScrollView {
-            ForEach(kids, id: \.id) { childItem in
-                MainScreenItemCell(item: childItem)
-                Divider()
+        NavigationStack {
+            ScrollView {
+                ForEach(kids, id: \.id) { childItem in
+                    MainScreenItemCell(item: childItem)
+                }
+            }
+            .lineSpacing(10)
+            .navigationTitle("Happy Birthday")
+            .toolbar {
+                NavigationLink {
+                    AddUpdateChildView()
+                } label: {
+                    Text("Add Child")
+                }
             }
         }
-        .lineSpacing(10)
-        .navigationTitle("Happy Birthday")
-        }
+    }
+    
+    private func deleteItem(offsets: IndexSet) {
+        
     }
 }
 
