@@ -63,13 +63,40 @@ enum DesignKit: CaseIterable {
     }
 }
 
+protocol PhotoDisplable {
+    func getProfileImageFrom(_ item: ChildItem, designKit: DesignKit?, image: UIImage?) -> UIImage
+}
 
-struct BirthdayScreen: View {
-    
-    @State var designKit: DesignKit = .Pelican
-    
+extension PhotoDisplable {
+    func getProfileImageFrom(_ item: ChildItem, designKit: DesignKit?, image: UIImage?) -> UIImage {
+        
+        if let image {
+            return image
+        }
+        
+        if let data = item.imageData,
+           let uiImage = UIImage(data: data) {
+            return uiImage
+        }
+        if let defaultImage = designKit?.defaultImage,
+           let uiImage = UIImage(named: defaultImage) {
+            return uiImage
+        }
+            
+        return UIImage(named: "Default_Image_Pelican") ?? UIImage()
+        
+    }
+}
+
+struct BirthdayScreen: View, PhotoDisplable {
+
+    /// Environment variables
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.modelContext) private var context
+    
+    
+    /// State Variables
+    @State var designKit: DesignKit = .Pelican
     @State var item: ChildItem
     @State private var selectedItem: PhotosPickerItem?
     @State var image: UIImage?
@@ -78,6 +105,7 @@ struct BirthdayScreen: View {
     @State private var isProfilePhotoAlertPreseneted = false
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var sharedImage: Image = Image("")
+    
     var body: some View {
         ZStack {
             ZStack {
@@ -106,7 +134,7 @@ struct BirthdayScreen: View {
                 .ignoresSafeArea(.all)
                 .frame(maxHeight: .infinity, alignment: .top)
                 VStack {
-                    Image(uiImage: getProfileImageFrom(item, designKit: designKit))
+                    Image(uiImage: getProfileImageFrom(item, designKit: designKit, image: image))
                         .resizable()
                         .scaledToFill()
                         .frame(width:218, height: 218)
@@ -203,21 +231,6 @@ struct BirthdayScreen: View {
         } message: {
             Text("The profile photo has been updated, would you like to save the change?")
         }
-
-    }
-    
-    private func getProfileImageFrom(_ item: ChildItem, designKit: DesignKit) -> UIImage {
-        
-        if let image = self.image {
-            return image
-        }
-        
-        if let data = item.imageData,
-           let uiImage = UIImage(data: data) {
-            return uiImage
-        }
-        
-        return UIImage(named: designKit.defaultImage) ?? UIImage()
     }
 }
 

@@ -10,8 +10,12 @@ import SwiftUI
 
 struct ImagePickerView: UIViewControllerRepresentable {
 
-    @Binding var selectedImage: UIImage?
+    ///Environment variable
     @Environment(\.presentationMode) var isPresented
+    
+    ///Binding variable
+    @Binding var selectedImage: UIImage?
+    
     var sourceType: UIImagePickerController.SourceType
         
     func makeUIViewController(context: Context) -> UIImagePickerController {

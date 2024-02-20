@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SharedBirthdayView: View {
+    
+    /// State Varibable
     @State var item: ChildItem
+   
     var designKit: DesignKit = .Pelican
+    
     var body: some View {
         ZStack {
             ZStack {

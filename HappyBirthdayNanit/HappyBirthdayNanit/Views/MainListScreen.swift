@@ -9,8 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct MainListScreen: View {
+    ///Environment variable
     @Environment(\.modelContext) private var context
+    
+    ///Persistent data query for kids list
     @Query(sort: \ChildItem.uuid, order: .reverse) private var kids: [ChildItem]
+    
     var body: some View {
         NavigationStack {
             ScrollView {

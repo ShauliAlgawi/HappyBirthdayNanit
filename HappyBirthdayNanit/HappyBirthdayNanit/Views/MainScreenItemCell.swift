@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainScreenItemCell: View {
+    
+    /// State variable
     @State var item: ChildItem
+    
     var body: some View {
         VStack {
             HStack {

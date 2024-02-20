@@ -8,10 +8,14 @@
 import SwiftUI
 import SwiftData
 
-struct AddUpdateChildView: View {
+struct AddUpdateChildView: View, PhotoDisplable {
+    
+    ///Environment variables
     @Environment(\.modelContext) private var context
     @Environment(\.presentationMode) var presentationMode
     @State var childItem: ChildItem = ChildItem(name: "", birthDate: Date.now)
+    
+    /// State variables
     @State private var isImagePickerDisplay = false
     @State private var image: UIImage?
     @State private var displayImageSelectionSourceBottomSheet = false
@@ -20,6 +24,7 @@ struct AddUpdateChildView: View {
     @State var onUpdateMode: Bool = false
     @State private var birthDate = Date.now
     @FocusState private var keyboardFocused: Bool
+    
     var body: some View {
         Form {
             TextField("Name", text: $name)
@@ -33,7 +38,7 @@ struct AddUpdateChildView: View {
             
             VStack {
                 Text("Profile Image")
-                Image(uiImage: getProfileImageFrom(childItem))
+                Image(uiImage: getProfileImageFrom(childItem, designKit: nil, image: image))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 100, height: 100)
