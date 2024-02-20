@@ -12,7 +12,6 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
     @Binding var selectedImage: UIImage?
     @Environment(\.presentationMode) var isPresented
-    @Binding var mainItem: ChildItem
     var sourceType: UIImagePickerController.SourceType
         
     func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -40,10 +39,8 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[.originalImage] as? UIImage,
-        let imageData = selectedImage.heicData() else { return }
+        guard let selectedImage = info[.originalImage] as? UIImage else { return }
         self.picker.selectedImage = selectedImage
-        self.picker.mainItem.imageData = imageData
         self.picker.isPresented.wrappedValue.dismiss()
     }
     

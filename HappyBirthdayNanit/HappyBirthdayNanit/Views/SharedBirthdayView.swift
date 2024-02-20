@@ -73,5 +73,5 @@ struct SharedBirthdayView: View {
 }
 
 #Preview {
-    SharedBirthdayView(item: ChildItem(name: "Itay", birthDate: Date.now, imageUrl: nil, imageData: nil))
+    SharedBirthdayView(item: ChildItem(name: "Itay", birthDate: Date.now, imageData: nil))
 }

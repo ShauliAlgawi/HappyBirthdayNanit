@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import SwiftData
 
 enum DesignKit: CaseIterable {
     case Elephant
@@ -68,11 +69,13 @@ struct BirthdayScreen: View {
     @State var designKit: DesignKit = .Pelican
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.modelContext) private var context
     @State var item: ChildItem
     @State private var selectedItem: PhotosPickerItem?
     @State var image: UIImage?
     @State var displayImageSelectionSourceBottomSheet: Bool = false
     @State private var isImagePickerDisplay = false
+    @State private var isProfilePhotoAlertPreseneted = false
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var sharedImage: Image = Image("")
     var body: some View {
@@ -141,7 +144,7 @@ struct BirthdayScreen: View {
                 Text("Select your baby's photo")
             }
             .sheet(isPresented: $isImagePickerDisplay, content: {
-                ImagePickerView(selectedImage: $image, mainItem: $item, sourceType: self.sourceType)
+                ImagePickerView(selectedImage: $image, sourceType: self.sourceType)
             })
     
             VStack {
@@ -170,7 +173,11 @@ struct BirthdayScreen: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    self.presentationMode.wrappedValue.dismiss()
+                    if self.image != nil {
+                        self.isProfilePhotoAlertPreseneted = true
+                    } else {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 } label: {
                     Image("back_button_blue")
                 }
@@ -179,11 +186,32 @@ struct BirthdayScreen: View {
         .onAppear {
             designKit = DesignKit.randomDesign
             sharedImage = SharedBirthdayView(item: item, designKit: designKit).snapshot()
-            
         }
+        .alert("Profile Photo Updated", isPresented: $isProfilePhotoAlertPreseneted) {
+            Button("Save") {
+                do {
+                    item.imageData = self.image?.heicData()
+                    try context.save()
+                    self.presentationMode.wrappedValue.dismiss()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("The profile photo has been updated, would you like to save the change?")
+        }
+
     }
     
     private func getProfileImageFrom(_ item: ChildItem, designKit: DesignKit) -> UIImage {
+        
+        if let image = self.image {
+            return image
+        }
+        
         if let data = item.imageData,
            let uiImage = UIImage(data: data) {
             return uiImage
@@ -194,5 +222,5 @@ struct BirthdayScreen: View {
 }
 
 #Preview {
-    BirthdayScreen(item: ChildItem(name: "Itey Algawi", birthDate: Date.now, imageUrl: nil, imageData: nil))
+    BirthdayScreen(item: ChildItem(name: "Itey Algawi", birthDate: Date.now, imageData: nil))
 }

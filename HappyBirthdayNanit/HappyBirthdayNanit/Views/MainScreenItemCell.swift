@@ -54,5 +54,5 @@ struct MainScreenItemCell: View {
 }
 
 #Preview {
-    MainScreenItemCell(item: ChildItem(name: "Itay Algawi", birthDate: Date.now, imageUrl: "Default_place_holder_blue-1", imageData: nil))
+    MainScreenItemCell(item: ChildItem(name: "Itay Algawi", birthDate: Date.now, imageData: nil))
 }

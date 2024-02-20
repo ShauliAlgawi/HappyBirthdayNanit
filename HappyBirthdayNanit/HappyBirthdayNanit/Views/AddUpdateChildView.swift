@@ -46,7 +46,7 @@ struct AddUpdateChildView: View {
             Button(onUpdateMode ? "Update" : "Save") {
                 childItem.name = name
                 childItem.birthDate = birthDate
-                
+                childItem.imageData = self.image?.heicData()
                 if !onUpdateMode {
                     context.insert(childItem)
                 }
@@ -84,7 +84,7 @@ struct AddUpdateChildView: View {
             Text("Select your baby's photo")
         }
         .sheet(isPresented: $isImagePickerDisplay, content: {
-            ImagePickerView(selectedImage: $image, mainItem: $childItem, sourceType: self.sourceType)
+            ImagePickerView(selectedImage: $image, sourceType: self.sourceType)
         })
         .onAppear {
             onUpdateMode = !childItem.name.isEmpty 
@@ -98,12 +98,17 @@ struct AddUpdateChildView: View {
     }
     
     private func getProfileImageFrom(_ item: ChildItem) -> UIImage {
+        
+        if let image = self.image {
+            return image
+        }
+        
         if let data = item.imageData,
            let uiImage = UIImage(data: data) {
             return uiImage
         }
         
-        return UIImage(named: "Default_Image_Elephant") ?? UIImage()
+        return self.image ?? UIImage()
     }
 }
 

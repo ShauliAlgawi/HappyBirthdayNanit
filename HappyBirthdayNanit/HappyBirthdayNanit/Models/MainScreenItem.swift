@@ -12,14 +12,12 @@ import SwiftData
 
 @Model class ChildItem {
     var name: String
-    var imageUrl: String?
     var imageData: Data?
     var birthDate: Date
     @Attribute(.unique) var uuid: UUID
     
-    init(name: String, birthDate: Date, imageUrl: String? = nil, imageData: Data? = nil) {
+    init(name: String, birthDate: Date, imageData: Data? = nil) {
         self.name = name
-        self.imageUrl = imageUrl
         self.birthDate = birthDate
         self.uuid = UUID()
     }
