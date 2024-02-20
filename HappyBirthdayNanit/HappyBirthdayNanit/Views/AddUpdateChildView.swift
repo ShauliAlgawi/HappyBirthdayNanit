@@ -51,7 +51,9 @@ struct AddUpdateChildView: View, PhotoDisplable {
             Button(onUpdateMode ? "Update" : "Save") {
                 childItem.name = name
                 childItem.birthDate = birthDate
-                childItem.imageData = self.image?.heicData()
+                if let imageData = self.image?.heicData() {
+                    childItem.imageData = imageData
+                }
                 if !onUpdateMode {
                     context.insert(childItem)
                 }
